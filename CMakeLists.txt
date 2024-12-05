@@ -3,6 +3,10 @@ project(unitree_legged_sdk)
 
 # check arch and os
 message("-- CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
+
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -no-pie")
+add_compile_options(-std=c++17)
+
 if("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "x86_64.*")
   set(ARCH amd64)
 endif()
